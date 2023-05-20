@@ -24,6 +24,21 @@ public class TargetController : MonoBehaviour, IHittable
         rb = GetComponent<Rigidbody>();
         originPosition = transform.position;
         nextposition = GetNewMovementPosition();
+
+        string difficulty = PlayerPrefs.GetString("difficulty");
+        Debug.Log(difficulty);
+        if(difficulty == "medium")
+        {
+            speed = 1;
+        }
+        else if(difficulty == "hard")
+        {
+            speed = 3;
+        }
+        else
+        {
+            speed = 0;
+        }
     }
 
     private Vector3 GetNewMovementPosition()

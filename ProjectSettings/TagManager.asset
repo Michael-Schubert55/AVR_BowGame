@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Arrow
+  - TargetArea_2Points
+  - TargetArea_4Points
+  - TargetArea_6Points
+  - TargetArea_8Points
+  - TargetArea_10Points
   layers:
   - Default
   - TransparentFX

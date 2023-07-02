@@ -31,5 +31,8 @@ public class ArrowController : MonoBehaviour
         arrow.transform.rotation = arrowSpawnPoint.transform.rotation;
         Rigidbody rBody = arrow.GetComponent<Rigidbody>();
         rBody.AddForce(midPointVisual.transform.right * strength * arrowMaxSpeed, ForceMode.Impulse);
+        Debug.Log("Arrow hits Tarrget");
+        Debug.Log(scoreCounter.Counter);
+        scoreCounter.Counter = 1;
     }
 }

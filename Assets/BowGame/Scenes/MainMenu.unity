@@ -5611,6 +5611,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fbb479de08a5564ca4c872147acdc7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menu: {fileID: 0}
+  showButton:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Show Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: da9fb112-3a60-47f9-b5a9-d732fa6aa853
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
 --- !u!114 &1770076363
 MonoBehaviour:
   m_ObjectHideFlags: 0

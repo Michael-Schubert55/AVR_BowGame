@@ -6,9 +6,6 @@ using UnityEngine.InputSystem;
 
 public class MenuManager : MonoBehaviour
 {
-    public GameObject menu;
-    public InputActionProperty showButton;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -18,10 +15,7 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (showButton.action.WasPressedThisFrame())
-        {
-            menu.SetActive(!menu.activeSelf);
-        }
+
     }
 
     public void CloseApplication()

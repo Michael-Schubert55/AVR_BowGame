@@ -3919,6 +3919,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 932765820}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &932765826 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6640404378247577139, guid: 792127f5d5b0c9a478426d7551f20794,
+    type: 3}
+  m_PrefabInstance: {fileID: 932765820}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &934590144
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5362,7 +5368,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1103961831}
   - component: {fileID: 1103961830}
-  - component: {fileID: 1103961829}
   m_Layer: 0
   m_Name: GlobalScripts
   m_TagString: Untagged
@@ -5370,19 +5375,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1103961829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1103961828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a782ecb0b4ab5ac498b9923333d961b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dropDown: {fileID: 0}
 --- !u!114 &1103961830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5395,19 +5387,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fbb479de08a5564ca4c872147acdc7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu: {fileID: 1995714747}
-  showButton:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Show Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 3e8bcd38-3d63-44bf-8192-ebea4a83fecf
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
 --- !u!4 &1103961831
 Transform:
   m_ObjectHideFlags: 0
@@ -9243,6 +9222,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1995714748}
+  - component: {fileID: 1995714749}
   m_Layer: 0
   m_Name: GameMenu
   m_TagString: Untagged
@@ -9267,6 +9247,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1995714749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995714747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47573715464d5ad40808577a3d037ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  head: {fileID: 932765826}
+  spawnDistance: 2
+  menu: {fileID: 952366901}
+  showButton:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Show Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 486590c2-52f5-431c-8f41-64a1e3e2a22e
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 2606541442483025445, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
 --- !u!1 &2009847283 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 359ee090241a9714a8212555d3db9365,

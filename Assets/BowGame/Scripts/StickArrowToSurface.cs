@@ -13,14 +13,13 @@ public class StickArrowToSurface : MonoBehaviour
 
     [SerializeField]
     GameObject stuckArrow;
-    ScoreCounter scoreCounter;
 
     // Stick arrow and destory shot arrow
     private void OnCollisionEnter(Collision collision)
     {
         rBody.isKinematic = true;
         sCollider.isTrigger = true;
-        scoreCounter = GameObject.Find("Scripts").GetComponent<ScoreCounter>();
+
 
         GameObject stuckArrowInstance = Instantiate(stuckArrow);
         stuckArrowInstance.transform.position = transform.position;
@@ -28,10 +27,8 @@ public class StickArrowToSurface : MonoBehaviour
        
 
         if (collision.collider.attachedRigidbody != null)
-        {
-            
-            stuckArrowInstance.transform.parent = collision.collider.attachedRigidbody.transform;
-           
+        { 
+            stuckArrowInstance.transform.parent = collision.collider.attachedRigidbody.transform;  
         }
 
         collision.collider.GetComponent<IHittable>()?.GetHit();

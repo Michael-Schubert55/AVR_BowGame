@@ -10,6 +10,8 @@ public class IngameMenuManager : MonoBehaviour
     public float spawnDistance = 2;
     public GameObject menu;
     public InputActionProperty showButton;
+    public GameObject rayInteractorLeft;
+    public GameObject rayInteractorRight;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +25,8 @@ public class IngameMenuManager : MonoBehaviour
         if (showButton.action.WasPressedThisFrame())
         {
             menu.SetActive(!menu.activeSelf);
-            Debug.Log(!menu.activeSelf);
+            rayInteractorLeft.SetActive(true);
+            rayInteractorRight.SetActive(true);
 
             menu.transform.position = head.position + new Vector3(head.forward.x, 0, head.forward.z).normalized * spawnDistance;
         }

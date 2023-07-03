@@ -1803,26 +1803,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 696605797295535503, guid: fc4008cc69860574aa90bd3258fac7b2,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 696605797295535503, guid: fc4008cc69860574aa90bd3258fac7b2,
-        type: 3}
-      propertyPath: m_UsedByEffector
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2511520773704113019, guid: fc4008cc69860574aa90bd3258fac7b2,
-        type: 3}
-      propertyPath: m_Mass
-      value: 0.035990614
-      objectReference: {fileID: 0}
-    - target: {fileID: 2511520773704113019, guid: fc4008cc69860574aa90bd3258fac7b2,
-        type: 3}
-      propertyPath: m_UseAutoMass
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3597501413744172924, guid: fc4008cc69860574aa90bd3258fac7b2,
         type: 3}
       propertyPath: m_RootOrder
@@ -1878,46 +1858,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4188771792477486515, guid: fc4008cc69860574aa90bd3258fac7b2,
-        type: 3}
-      propertyPath: m_Mass
-      value: 0.31280798
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188771792477486515, guid: fc4008cc69860574aa90bd3258fac7b2,
-        type: 3}
-      propertyPath: m_UseAutoMass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4637785435532639198, guid: fc4008cc69860574aa90bd3258fac7b2,
-        type: 3}
-      propertyPath: m_Mass
-      value: 0.7062577
-      objectReference: {fileID: 0}
-    - target: {fileID: 4637785435532639198, guid: fc4008cc69860574aa90bd3258fac7b2,
-        type: 3}
-      propertyPath: m_UseAutoMass
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6782075447571060781, guid: fc4008cc69860574aa90bd3258fac7b2,
         type: 3}
       propertyPath: m_Name
       value: Target
       objectReference: {fileID: 0}
-    - target: {fileID: 6957008794191819718, guid: fc4008cc69860574aa90bd3258fac7b2,
+    - target: {fileID: 7074552065778930852, guid: fc4008cc69860574aa90bd3258fac7b2,
         type: 3}
-      propertyPath: m_UsedByEffector
+      propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7509867155272601088, guid: fc4008cc69860574aa90bd3258fac7b2,
-        type: 3}
-      propertyPath: m_Mass
-      value: 1.2298559
-      objectReference: {fileID: 0}
-    - target: {fileID: 7509867155272601088, guid: fc4008cc69860574aa90bd3258fac7b2,
-        type: 3}
-      propertyPath: m_UseAutoMass
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5478223610987213749, guid: fc4008cc69860574aa90bd3258fac7b2, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc4008cc69860574aa90bd3258fac7b2, type: 3}

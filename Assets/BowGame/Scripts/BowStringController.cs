@@ -5,6 +5,13 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
 
+// =============================================================
+// AUTHOR       : Schubert Michael, Kunisch Paul
+// CREATE DATE  : Mai 2023
+// SOURCE       : https://github.com/SunnyValleyStudio/VR-Archery-in-Unity-2022
+// PURPOSE      : Handles the bow and string interaction. Defines the behaviour of the pulling and releasing mechanics of the bow string.
+// SPECIAL NOTES: -
+// =============================================================
 public class BowStringController : MonoBehaviour
 {
     [SerializeField]
@@ -37,15 +44,13 @@ public class BowStringController : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("start");
-
         interactable.selectEntered.AddListener(PrepareBowString);
         interactable.selectExited.AddListener(ResetBowString);
     }
 
     private void ResetBowString(SelectExitEventArgs arg0)
     {
-        // shot arrow
+        // Shot arrow
         OnBowReleased?.Invoke(strength);
         strength = 0.0f;
 
@@ -54,7 +59,7 @@ public class BowStringController : MonoBehaviour
         bowPullAudio.pitch = 1;
         bowPullAudio.Stop();
 
-        // reset string
+        // Reset string
         interactor = null;
         midPointGrabObject.localPosition = Vector3.zero;
         midPointVisualObject.localPosition = Vector3.zero;
@@ -73,10 +78,10 @@ public class BowStringController : MonoBehaviour
     {
         if (interactor != null)
         {
-            //converts bow string mid point position to the local space of the MidPoint
+            // converts bow string mid point position to the local space of the MidPoint
             Vector3 midPointLocalSpace = midPointParent.InverseTransformPoint(midPointGrabObject.position); // localPosition
 
-            //get the offset
+            // get the offset
             float midPointLocalXAbs = Mathf.Abs(midPointLocalSpace.x);
 
             previousStrength = strength;
@@ -93,17 +98,16 @@ public class BowStringController : MonoBehaviour
 
     private void HandlePullingString(float midPointLocalXAbs, Vector3 midPointLocalSpace)
     {
-        //what happens when we are between point 0 and the string pull limit
+        // What happens when we are between point 0 and the string pull limit
         if (midPointLocalSpace.x < 0 && midPointLocalXAbs < bowStringStretchLimit)
         {
-            Debug.Log("playing" + midPointLocalSpace);
-            // bow sound
+            // Bow sound
             if (bowPullAudio.isPlaying == false && strength <= 0.01f)
             {
                 bowPullAudio.Play();
             }
 
-            //calculate arrow strength
+            // Calculate arrow strength
             strength = Remap(midPointLocalXAbs, 0, bowStringStretchLimit, 0, 1);
 
             midPointVisualObject.localPosition = new Vector3(midPointLocalSpace.x, 0, 0);
@@ -114,7 +118,7 @@ public class BowStringController : MonoBehaviour
 
     private void PlayStringPullingSound()
     {
-        //Check if we have moved the string enought to play the sound unpause it
+        // Check if we have moved the string enought to play the sound unpause it
         if (Mathf.Abs(strength - previousStrength) > stringSoundThreshold)
         {
             if (strength < previousStrength)
@@ -131,12 +135,12 @@ public class BowStringController : MonoBehaviour
         }
         else
         {
-            //if stop moving Pause the sounds
+            // If stop moving Pause the sounds
             bowPullAudio.Pause();
         };
     }
 
-    // map strength to values from 0 to 1
+    // Map strength to values from 0 to 1
     private float Remap(float value, int fromMin, float fromMax, int toMin, int toMax)
     {
         return (value - fromMin) / (fromMax - fromMin) * (toMax - toMin) + toMin;
@@ -144,21 +148,21 @@ public class BowStringController : MonoBehaviour
 
     private void HandleStringPulledBackTolimit(float midPointLocalXAbs, Vector3 midPointLocalSpace)
     {
-        //specify max pulling limit for the string. we don't allow the string to go any farther than "bowStringStretchLimit"
+        // Specify max pulling limit for the string. we don't allow the string to go any farther than "bowStringStretchLimit"
         if (midPointLocalSpace.z < 0 && midPointLocalXAbs >= bowStringStretchLimit)
         {
             bowPullAudio.Pause();
 
             strength = 1;
 
-            //vector3 direction = midpointparent.transformdirection(new vector3(0, 0, midpointlocalspace.z));
+            // Vector3 direction = midpointparent.transformdirection(new vector3(0, 0, midpointlocalspace.z));
             midPointVisualObject.localPosition = new Vector3(-bowStringStretchLimit, 0, 0);
         }
     }
 
     private void HandleStringPushedBackToStart(Vector3 midPointLocalSpace)
     {
-        //what happens when the string gets pushed forward
+        // What happens when the string gets pushed forward
         if (midPointLocalSpace.x >= 0)
         {
             bowPullAudio.pitch = 1;

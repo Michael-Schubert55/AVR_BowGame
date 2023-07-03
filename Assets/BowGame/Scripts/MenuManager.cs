@@ -4,6 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 
+// =============================================================
+// AUTHOR       : Schubert Michael
+// CREATE DATE  : June 2023
+// SOURCE       : Custom
+// PURPOSE      : Handles the menu interactions for switching scenes and leaving the game.
+// SPECIAL NOTES: -
+// =============================================================
 public class MenuManager : MonoBehaviour
 {
     // Start is called before the first frame update

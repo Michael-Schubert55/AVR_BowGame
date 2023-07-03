@@ -25,8 +25,8 @@ public class IngameMenuManager : MonoBehaviour
         if (showButton.action.WasPressedThisFrame())
         {
             menu.SetActive(!menu.activeSelf);
-            rayInteractorLeft.SetActive(true);
-            rayInteractorRight.SetActive(true);
+            rayInteractorLeft.SetActive(!rayInteractorLeft.activeSelf);
+            rayInteractorRight.SetActive(!rayInteractorRight.activeSelf);
 
             menu.transform.position = head.position + new Vector3(head.forward.x, 0, head.forward.z).normalized * spawnDistance;
         }

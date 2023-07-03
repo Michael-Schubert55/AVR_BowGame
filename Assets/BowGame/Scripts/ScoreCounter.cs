@@ -6,6 +6,13 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem.iOS;
 
+// =============================================================
+// AUTHOR       : Kunisch Paul
+// CREATE DATE  : July 2023
+// SOURCE       : Custom
+// PURPOSE      : Counts the arrows shot and calculates a score.
+// SPECIAL NOTES: -
+// =============================================================
 public class ScoreCounter : MonoBehaviour
 {
     [SerializeField]

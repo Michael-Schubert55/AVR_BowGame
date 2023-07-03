@@ -3,6 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(LineRenderer))]
+
+// =============================================================
+// AUTHOR       : Schubert Michael, Kunisch Paul
+// CREATE DATE  : Mai 2023
+// SOURCE       : https://github.com/SunnyValleyStudio/VR-Archery-in-Unity-2022/tree/main/Vid%205
+// PURPOSE      : Handles the visualization of the bow string.
+// SPECIAL NOTES: -
+// =============================================================
 public class BowString : MonoBehaviour
 {
     [SerializeField]
@@ -17,6 +25,7 @@ public class BowString : MonoBehaviour
 
     public void CreateString(Vector3? midPosition)
     {
+        // Checks if string is pulles. Then 3 linepoints.
         Vector3[] linePoints = new Vector3[midPosition == null ? 2 : 3];
         linePoints[0] = endpoint_1.localPosition;
         if (midPosition != null)

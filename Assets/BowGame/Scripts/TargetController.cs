@@ -1,7 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
+// =============================================================
+// AUTHOR       : Schubert Michael
+// CREATE DATE  : June 2023
+// SOURCE       : Custom
+// PURPOSE      : Handles the targets behaviour and manages the difficulty selection.
+// SPECIAL NOTES: -
+// =============================================================
 public class TargetController : MonoBehaviour, IHittable
 {
     private Rigidbody rb;
@@ -19,12 +27,16 @@ public class TargetController : MonoBehaviour, IHittable
     [SerializeField]
     private float arriveThreshold, movementRadius = 2, speed = 1;
 
+    private Component[] childrenRenderes;
+
     private void Awake()
     {
+        // Movement of the target
         rb = GetComponent<Rigidbody>();
         originPosition = transform.position;
         nextposition = GetNewMovementPosition();
 
+        // Movementspeed of the target
         string difficulty = PlayerPrefs.GetString("difficulty");
         Debug.Log(difficulty);
         if(difficulty == "medium")
@@ -33,7 +45,7 @@ public class TargetController : MonoBehaviour, IHittable
         }
         else if(difficulty == "hard")
         {
-            speed = 3;
+            speed = 2;
         }
         else
         {
@@ -43,6 +55,7 @@ public class TargetController : MonoBehaviour, IHittable
 
     private Vector3 GetNewMovementPosition()
     {
+        // Next position of the target
         return originPosition + (Vector3)Random.insideUnitCircle * movementRadius;
     }
 
@@ -56,11 +69,21 @@ public class TargetController : MonoBehaviour, IHittable
 
     public void GetHit()
     {
+        // What happens when the target gets hit
         health--;
         if (health <= 0)
         {
-            Renderer ren = GetComponent<Renderer>();
-            ren.material.color = Color.green;
+            childrenRenderes = gameObject.GetComponentsInChildren<Renderer>();
+            int count = 0;
+
+            foreach (Renderer renderer in childrenRenderes)
+            {
+                if (count%2 == 1)
+                {
+                    renderer.material.color = Color.green;
+                }
+                count++;
+            }
 
             //rb.isKinematic = false;
             stopped = true;
@@ -69,6 +92,7 @@ public class TargetController : MonoBehaviour, IHittable
 
     private void FixedUpdate()
     {
+        // Moves target around
         if (stopped == false)
         {
             if (Vector3.Distance(transform.position, nextposition) < arriveThreshold)

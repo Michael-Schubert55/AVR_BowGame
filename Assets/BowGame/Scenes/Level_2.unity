@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: a59fe87939f259d40a7ee37624c9568b, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.3949402, g: 0.17852202, b: 0.17470089, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6829,8 +6829,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d6def51f900d30b49881eea9d658c2e5,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.35
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d6def51f900d30b49881eea9d658c2e5,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.35
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d6def51f900d30b49881eea9d658c2e5,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.35
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d6def51f900d30b49881eea9d658c2e5,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.1975327
+      value: 21.17
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d6def51f900d30b49881eea9d658c2e5,
         type: 3}
@@ -6840,7 +6855,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d6def51f900d30b49881eea9d658c2e5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 29.232983
+      value: 26.89
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d6def51f900d30b49881eea9d658c2e5,
         type: 3}
@@ -6876,6 +6891,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d6def51f900d30b49881eea9d658c2e5,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d6def51f900d30b49881eea9d658c2e5,
         type: 3}

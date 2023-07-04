@@ -24,12 +24,12 @@ public class Score : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("KollisionTest");
+        //Debug.Log("KollisionTest");
         foreach (ContactPoint contact in collision.contacts)
         {
             GameObject otherGameObject = contact.otherCollider.gameObject;
-            Debug.Log("Kollision mit: " + otherGameObject.tag);
-            if (GetPoints(otherGameObject.tag) != 0 && controller.FreshTarget(otherGameObject.name)) { score.Score +=GetPoints(otherGameObject.tag); }           
+            //Debug.Log("Kollision mit: " + otherGameObject.tag);
+            if (GetPoints(otherGameObject.tag) != 0 && controller.FreshTarget(otherGameObject.transform.parent.transform.parent.name)) { score.Score +=GetPoints(otherGameObject.tag); }           
         }
     }
     private int GetPoints(string tag)

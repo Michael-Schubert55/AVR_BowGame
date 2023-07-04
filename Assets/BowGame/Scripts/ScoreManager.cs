@@ -54,7 +54,7 @@ public class ScoreManager : MonoBehaviour
     {
         
         textScore.text = score.ToString();
-        Debug.Log("Update was called Score = " + score);
+        //Debug.Log("Update was called Score = " + score);
         if (PlayerPrefs.HasKey("Score " + currentSceneName) && PlayerPrefs.HasKey("Arrows " + currentSceneName))
         {
             if (PlayerPrefs.GetInt("Score " + currentSceneName) < score)

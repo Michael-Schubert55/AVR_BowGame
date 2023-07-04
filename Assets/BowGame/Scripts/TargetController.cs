@@ -46,7 +46,8 @@ public class TargetController : MonoBehaviour, IHittable
         taggedObjects = GameObject.FindGameObjectsWithTag("TargetArea_10Points");
         foreach (GameObject obj in taggedObjects)
         {
-            targetObjects[obj.name] = false;
+            targetObjects[obj.transform.parent.transform.parent.name] = true;
+            Debug.Log("Folgende Keys sind eingefüt worden Worden: " + obj.transform.parent.transform.parent.name);
         }
         
         targets  = taggedObjects.Length;
@@ -86,12 +87,20 @@ public class TargetController : MonoBehaviour, IHittable
         {
             audioSource.Play();
         }
-        foreach (KeyValuePair<string, bool> kvp in targetObjects)
+        
+        foreach (ContactPoint contact in collision.contacts)
         {
-                targetObjects[kvp.Key] = true;
+           
+            GameObject otherGameObject = contact.otherCollider.gameObject;
+            if (otherGameObject.transform.parent.transform.parent.name != null)
+            {
+                Debug.Log("Das getroffene Ziel ist: " + otherGameObject.transform.parent.transform.parent.name);
+                targetObjects[otherGameObject.transform.parent.transform.parent.name] = false;
             }
-        
-        
+            
+        }
+
+
     }
 
     public void GetHit()
@@ -116,6 +125,8 @@ public class TargetController : MonoBehaviour, IHittable
                 }
                 count++;
             }
+            
+            
 
             //rb.isKinematic = false;
             stopped = true;
@@ -123,14 +134,7 @@ public class TargetController : MonoBehaviour, IHittable
     }
     public bool FreshTarget(string key)
     {
-        foreach (KeyValuePair<string, bool> kvp  in targetObjects)
-        {
-            if (kvp.Key == key)
-            {
-                return false;
-            }
-        }
-        return true;
+        return targetObjects[key];
     }
 
     private void FixedUpdate()

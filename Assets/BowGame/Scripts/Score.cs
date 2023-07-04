@@ -29,7 +29,7 @@ public class Score : MonoBehaviour
         {
             GameObject otherGameObject = contact.otherCollider.gameObject;
             Debug.Log("Kollision mit: " + otherGameObject.tag);
-            if (GetPoints(otherGameObject.tag) != 0 && controller.FreschTarget(otherGameObject.name)) { score.Score +=GetPoints(otherGameObject.tag); }           
+            if (GetPoints(otherGameObject.tag) != 0 && controller.FreshTarget(otherGameObject.name)) { score.Score +=GetPoints(otherGameObject.tag); }           
         }
     }
     private int GetPoints(string tag)

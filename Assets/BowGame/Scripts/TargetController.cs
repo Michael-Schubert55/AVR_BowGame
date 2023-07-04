@@ -42,6 +42,7 @@ public class TargetController : MonoBehaviour, IHittable
         rb = GetComponent<Rigidbody>();
         originPosition = transform.position;
         nextposition = GetNewMovementPosition();
+        targetObjects = new Dictionary<string, bool>();
         taggedObjects = GameObject.FindGameObjectsWithTag("TargetArea_10Points");
         foreach (GameObject obj in taggedObjects)
         {
@@ -85,9 +86,9 @@ public class TargetController : MonoBehaviour, IHittable
         {
             audioSource.Play();
         }
-            foreach (GameObject obj in taggedObjects)
-            {
-                targetObjects[obj.name] = true;
+        foreach (KeyValuePair<string, bool> kvp in targetObjects)
+        {
+                targetObjects[kvp.Key] = true;
             }
         
         
@@ -120,11 +121,11 @@ public class TargetController : MonoBehaviour, IHittable
             stopped = true;
         }
     }
-    public bool FreschTarget(string key)
+    public bool FreshTarget(string key)
     {
-        foreach (GameObject obj in taggedObjects)
+        foreach (KeyValuePair<string, bool> kvp  in targetObjects)
         {
-            if (obj.name == key)
+            if (kvp.Key == key)
             {
                 return false;
             }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.005
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.001974701, g: 0.00089261006, b: 0.00087350444, a: 0.005}
+  m_IndirectSpecularColor: {r: 0.0019738243, g: 0.0008997726, b: 0.00087688875, a: 0.005}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6416,24 +6416,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2082530374}
     m_Modifications:
-    - target: {fileID: 1255990478, guid: fc4008cc69860574aa90bd3258fac7b2, type: 3}
-      propertyPath: movementRadius
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1255990478, guid: fc4008cc69860574aa90bd3258fac7b2, type: 3}
-      propertyPath: arriveThreshold
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 595269728556627120, guid: fc4008cc69860574aa90bd3258fac7b2,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 595269728556627120, guid: fc4008cc69860574aa90bd3258fac7b2,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.69
-      objectReference: {fileID: 0}
     - target: {fileID: 3597501413744172924, guid: fc4008cc69860574aa90bd3258fac7b2,
         type: 3}
       propertyPath: m_RootOrder
@@ -6494,8 +6476,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Target (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3783203776035350855, guid: fc4008cc69860574aa90bd3258fac7b2, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc4008cc69860574aa90bd3258fac7b2, type: 3}
 --- !u!1 &1263081517 stripped
 GameObject:
@@ -11395,8 +11376,18 @@ PrefabInstance:
       objectReference: {fileID: 1474105790}
     - target: {fileID: 6173176001849028283, guid: 2f35114a8d2af914aadc2d7ec8d7a87f,
         type: 3}
+      propertyPath: ingameMenu
+      value: 
+      objectReference: {fileID: 952366901}
+    - target: {fileID: 6173176001849028283, guid: 2f35114a8d2af914aadc2d7ec8d7a87f,
+        type: 3}
       propertyPath: textArrows
       value: 
       objectReference: {fileID: 1474105788}
+    - target: {fileID: 6173176001849028283, guid: 2f35114a8d2af914aadc2d7ec8d7a87f,
+        type: 3}
+      propertyPath: ingameMenuManager
+      value: 
+      objectReference: {fileID: 1995714749}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f35114a8d2af914aadc2d7ec8d7a87f, type: 3}

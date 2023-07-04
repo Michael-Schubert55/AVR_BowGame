@@ -10,6 +10,7 @@ TagManager:
   - TargetArea_6Points
   - TargetArea_8Points
   - TargetArea_10Points
+  - Target
   layers:
   - Default
   - TransparentFX

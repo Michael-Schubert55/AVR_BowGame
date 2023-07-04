@@ -33,11 +33,8 @@ public class TargetController : MonoBehaviour, IHittable
 
     private Component[] childrenRenderes;
 
-    //Attribute for score calculation
-    public int targets;
-    GameObject[] taggedObjects;
-    private Dictionary<string, bool> targetObjects;
-    //
+    public bool isHit = false;
+    ScoreManager scoreManager;
 
     private void Awake()
     {
@@ -45,20 +42,11 @@ public class TargetController : MonoBehaviour, IHittable
         rb = GetComponent<Rigidbody>();
         originPosition = transform.position;
         nextposition = GetNewMovementPosition();
-        // initalize the attributes for score Callculation
-        targetObjects = new Dictionary<string, bool>();
-        taggedObjects = GameObject.FindGameObjectsWithTag("TargetArea_10Points");
-        foreach (GameObject obj in taggedObjects)
-        {
-            targetObjects[obj.transform.parent.transform.parent.name] = true;
-            Debug.Log("Folgende Keys sind eingefüt worden Worden: " + obj.transform.parent.transform.parent.name);
-        }
-        //
-        targets  = taggedObjects.Length;
-        Debug.Log("In dieser Szene ist die Anzahl der Ziel: " + targets);
+
+        scoreManager = GameObject.Find("GlobalScripts").GetComponent<ScoreManager>();
 
         // Movementspeed of the target
-        if(isTutorialTarget == false)
+        if (isTutorialTarget == false)
         {
             string difficulty = PlayerPrefs.GetString("difficulty");
             if(difficulty == "medium")
@@ -91,27 +79,27 @@ public class TargetController : MonoBehaviour, IHittable
         {
             audioSource.Play();
         }
-        //set hitted targets to falls
+
+        // Adds points
         foreach (ContactPoint contact in collision.contacts)
         {
-           
-            GameObject otherGameObject = contact.otherCollider.gameObject;
-            if (otherGameObject.transform.parent.transform.parent.name != null)
-            {
-                Debug.Log("Das getroffene Ziel ist: " + otherGameObject.transform.parent.transform.parent.name);
-                targetObjects[otherGameObject.transform.parent.transform.parent.name] = false;
-            }
-            
-        }
-        //
+            GameObject otherGameObject = contact.thisCollider.gameObject;
 
+            if (otherGameObject.tag != "" && GetPoints(otherGameObject.tag) != 0 && isHit == false)
+            {
+                scoreManager.Score +=GetPoints(otherGameObject.tag);
+                isHit = true;
+            }
+
+            scoreManager.AllTargetsHit();
+        }
     }
 
     public void GetHit()
     {
         // What happens when the target gets hit
         health--;
-        if (health <= 0)
+        if (health <= 0 && isHit == false)
         {
             if (audioSource)
             {
@@ -129,18 +117,11 @@ public class TargetController : MonoBehaviour, IHittable
                 }
                 count++;
             }
-            
-            
 
             //rb.isKinematic = false;
             stopped = true;
         }
     }
-    //Return bool for given Target
-    public bool FreshTarget(string key)
-    {
-        return targetObjects[key];
-    }//
 
     private void FixedUpdate()
     {
@@ -157,6 +138,23 @@ public class TargetController : MonoBehaviour, IHittable
         }
     }
 
+    private int GetPoints(string tag)
+    {
+        switch (tag)
+        {
+            case "TargetArea_2Points":
+                return 2;
+            case "TargetArea_4Points":
+                return 4;
+            case "TargetArea_6Points":
+                return 6;
+            case "TargetArea_8Points":
+                return 8;
+            case "TargetArea_10Points":
+                return 10;
+        }
+        return 0;
+    }
 }
 
 public interface IHittable

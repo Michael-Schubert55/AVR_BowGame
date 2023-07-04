@@ -537,10 +537,9 @@ GameObject:
   - component: {fileID: 1255990484}
   - component: {fileID: 1255990478}
   - component: {fileID: 725266963}
-  - component: {fileID: 8754636823053933944}
   m_Layer: 0
   m_Name: TargetParent
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -664,6 +663,7 @@ MonoBehaviour:
   speed: 2
   isTutorialTarget: 0
   targets: 0
+  isHit: 0
 --- !u!82 &725266963
 AudioSource:
   m_ObjectHideFlags: 0
@@ -760,15 +760,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8754636823053933944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7220306800614681569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50ce94446e9af0946a8b54fe15b19d05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -46,6 +46,6 @@ public class ArrowController : MonoBehaviour
         arrow.transform.rotation = arrowSpawnPoint.transform.rotation;
         Rigidbody rBody = arrow.GetComponent<Rigidbody>();
         rBody.AddForce(midPointVisual.transform.right * strength * arrowMaxSpeed, ForceMode.Impulse);
-        arrowCount.arrows += 1;
+        arrowCount.AddArrow();
     }
 }

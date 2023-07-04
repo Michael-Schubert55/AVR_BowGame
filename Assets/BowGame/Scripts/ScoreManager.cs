@@ -36,25 +36,25 @@ public class ScoreManager : MonoBehaviour
 
     }
 
-    //public int Score
-    //{
-    //    get { return score; }
-    //    set { score = value; UpdateScore(); }
-    //}
-    //public int Arrows
-    //{
-    //    get { return arrows; }
-    //    set { arrows = value; UpdateArrows(); }
-    //}
+    public int Score
+    {
+        get { return score; }
+        set { score = value; UpdateScore(); }
+    }
+    public int Arrows
+    {
+        get { return arrows; }
+        set { arrows = value; UpdateArrows(); }
+    }
 
-    //private void UpdateArrows()
-    //{
-    //    textArrows.text = (arrows).ToString();
-    //}
-    //private void UpdateScore()
-    //{
-    //    textScore.text = score.ToString();
-    //}
+    private void UpdateArrows()
+    {
+        textArrows.text = (arrows).ToString();
+    }
+    private void UpdateScore()
+    {
+        textScore.text = score.ToString();
+    }
 
     private string GetCurrentSceneName()
     {
@@ -98,6 +98,24 @@ public class ScoreManager : MonoBehaviour
             }
 
             ingameMenuManager.ActivateExternal();
+        }
+    }
+
+    public void AddArrow()
+    {
+        bool allHit = true;
+
+        foreach (GameObject target in allTargets)
+        {
+            if (target.GetComponent<TargetController>().isHit == false)
+            {
+                allHit = false;
+            }
+        }
+
+        if(allHit == false)
+        {
+            Arrows += 1;
         }
     }
 

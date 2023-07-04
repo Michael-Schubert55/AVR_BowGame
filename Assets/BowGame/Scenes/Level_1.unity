@@ -1302,7 +1302,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: -6395602842196007441, guid: c348712bda248c246b8c49b3db54643f,
+    m_Reference: {fileID: 2606541442483025445, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   rayInteractorLeft: {fileID: 6640404379424574387}
   rayInteractorRight: {fileID: 6640404379424574386}
@@ -6924,7 +6924,7 @@ PrefabInstance:
     - target: {fileID: 402107029745545903, guid: 8f0079ff50d6c2543845a3d5aad78e8d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 150
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 601607193588380017, guid: 8f0079ff50d6c2543845a3d5aad78e8d,
         type: 3}
@@ -6934,7 +6934,7 @@ PrefabInstance:
     - target: {fileID: 601607193588380017, guid: 8f0079ff50d6c2543845a3d5aad78e8d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 150
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 2031159235922740999, guid: 8f0079ff50d6c2543845a3d5aad78e8d,
         type: 3}

@@ -23,7 +23,7 @@ public class SetHighScore : MonoBehaviour
             {
             highscore.text = "  Level             |       Punktzahl        |     Pfeile\n\n\n" +
                          "Übungslevel:                  "+PlayerPrefs.GetInt("Score Level_1")+"                      "+PlayerPrefs.GetInt("Arrows Level_1")+"\n" +
-                         "Level 1:                         "+PlayerPrefs.GetInt("Score Level_2")+"                      "+PlayerPrefs.GetInt("Arrows Level_2") + "\n" +
+                         "Level 1:                           "+PlayerPrefs.GetInt("Score Level_2")+"                      "+PlayerPrefs.GetInt("Arrows Level_2") + "\n" +
                          "Level 2:                           "+PlayerPrefs.GetInt("Score Level_3")+"                      "+PlayerPrefs.GetInt("Arrows Level_3");
         }else
         {

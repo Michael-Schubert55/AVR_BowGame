@@ -53,12 +53,12 @@ public class ScoreManager : MonoBehaviour
 
     private void UpdateArrows()
     {
-        textArrows.text = (arrows).ToString();
+        textArrows.text = "Pfeile: " + (arrows).ToString();
         menuTextArrows.text = (arrows).ToString();
     }
     private void UpdateScore()
     {
-        textScore.text = score.ToString();
+        textScore.text = "Punkte: " + score.ToString();
         menuTextScore.text = score.ToString();
     }
 

@@ -8199,23 +8199,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2031159235922740999, guid: 8f0079ff50d6c2543845a3d5aad78e8d,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: f8ba5c8e2a3fd9240b660f0e78396349,
-        type: 2}
-    - target: {fileID: 2031159235922740999, guid: 8f0079ff50d6c2543845a3d5aad78e8d,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -149686484671019929, guid: f8ba5c8e2a3fd9240b660f0e78396349,
-        type: 2}
-    - target: {fileID: 2031159235922741000, guid: 8f0079ff50d6c2543845a3d5aad78e8d,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 53
-      objectReference: {fileID: 0}
     - target: {fileID: 2031159236017430754, guid: 8f0079ff50d6c2543845a3d5aad78e8d,
         type: 3}
       propertyPath: m_RootOrder
@@ -8281,23 +8264,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 932765821}
-    - target: {fileID: 2031159236671702292, guid: 8f0079ff50d6c2543845a3d5aad78e8d,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: f8ba5c8e2a3fd9240b660f0e78396349,
-        type: 2}
-    - target: {fileID: 2031159236671702292, guid: 8f0079ff50d6c2543845a3d5aad78e8d,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -149686484671019929, guid: f8ba5c8e2a3fd9240b660f0e78396349,
-        type: 2}
-    - target: {fileID: 2031159236671702293, guid: 8f0079ff50d6c2543845a3d5aad78e8d,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 52
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f0079ff50d6c2543845a3d5aad78e8d, type: 3}
 --- !u!114 &1474105788 stripped

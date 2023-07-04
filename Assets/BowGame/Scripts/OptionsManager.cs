@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 // =============================================================
 // AUTHOR       : Schubert Michael
@@ -13,6 +14,11 @@ using UnityEngine;
 public class OptionsManager : MonoBehaviour
 {
     public TMP_Dropdown dropDown;
+
+    [SerializeField]
+    private Slider volumeSlider = null;
+    [SerializeField]
+    private TMP_Text volumeText = null;
 
     // Set selected value
     void Start()
@@ -34,6 +40,8 @@ public class OptionsManager : MonoBehaviour
                 dropDown.value = 0;
             }
         }
+
+        LoadVolume();
     }
 
     // Handles the difficulty selection
@@ -51,5 +59,26 @@ public class OptionsManager : MonoBehaviour
         {
             PlayerPrefs.SetString("difficulty", "easy");
         }
+    }
+
+    // Handles the volume settings
+    public void SaveVolume()
+    {
+        float volumeValue = volumeSlider.value;
+        PlayerPrefs.SetFloat("Volume", volumeValue);
+        LoadVolume();
+    }
+
+    public void VolumeSlider(float volume)
+    {
+        volumeText.text = volume.ToString("0.0");
+    }
+
+    public void LoadVolume()
+    {
+        float volumeValue = PlayerPrefs.GetFloat("Volume");
+
+        volumeSlider.value = volumeValue;
+        AudioListener.volume = volumeValue;
     }
 }

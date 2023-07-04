@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/BowGame/Scenes/MainMenu.unity
     guid: 079860fce69476f47a0e9764ff60fbc6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tutorial.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
@@ -21,6 +21,8 @@ EditorBuildSettings:
     path: Assets/BowGame/Scenes/Level_3.unity
     guid: dd00f0ae143411d40acc836138eed951
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 56ff9bc3bb58ee142947ad213b19083f,
+      type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: f3defae645a74604f84c42d76b125905,
       type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 21c46fc50da7ffd4faf686500a2618e9,

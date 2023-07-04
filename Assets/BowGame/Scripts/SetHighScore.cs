@@ -18,19 +18,19 @@ public class SetHighScore : MonoBehaviour
     {
 
         //if (!PlayerPrefs.HasKey("Score " + currentSceneName)) && !(PlayerPrefs.HasKey("Arrows " + currentSceneName)))
-        if (PlayerPrefs.HasKey("Score Level_1") && PlayerPrefs.HasKey("Score Level_2") && (PlayerPrefs.HasKey("Score Level_3")))
+        if (PlayerPrefs.HasKey("Score Level_1") || PlayerPrefs.HasKey("Score Level_2") || (PlayerPrefs.HasKey("Score Level_3")))
         //if (!(PlayerPrefs.HasKey("Score Level_1")) && !(PlayerPrefs.HasKey("Score Level_2")) && (!(PlayerPrefs.HasKey("Score Level_3"))))
             {
-            highscore.text = "  Level            |         Hoechste Punktzahl        |       Wenigste Pfeile\n\n\n" +
-                         "Übungslevel:                      "+PlayerPrefs.GetInt("Score Level_1")+"                                              "+PlayerPrefs.GetInt("Arrows Level_1")+"\n" +
-                         "Level_1:                              "+PlayerPrefs.GetInt("Score Level_2")+"                                             "+PlayerPrefs.GetInt("Arrows Level_2") + "\n" +
-                         "Level_2:                             "+PlayerPrefs.GetInt("Score Level_3")+"                                             "+PlayerPrefs.GetInt("Arrows Level_3");
+            highscore.text = "  Level             |       Punktzahl        |     Pfeile\n\n\n" +
+                         "Übungslevel:                  "+PlayerPrefs.GetInt("Score Level_1")+"                      "+PlayerPrefs.GetInt("Arrows Level_1")+"\n" +
+                         "Level 1:                         "+PlayerPrefs.GetInt("Score Level_2")+"                      "+PlayerPrefs.GetInt("Arrows Level_2") + "\n" +
+                         "Level 2:                          "+PlayerPrefs.GetInt("Score Level_3")+"                      "+PlayerPrefs.GetInt("Arrows Level_3");
         }else
         {
-            highscore.text = "  Level                |    Hoechste Punktzahl           |     Wenigste Pfeile\n\n\n" +
-                         "Übungslevel:        "+"Keine Punkte vorhanden"+"            "+"Keine Anzahl vorhanden"+"\n" +
-                         "Level_1:             "+"Keine Punkte vorhanden"+"            "+"Keine Anzahl vorhanden"+"\n" +
-                         "Level_2:            "+"Keine Punkte vorhanden"+"            "+"Keine Anzahl vorhanden";
+            highscore.text = "  Level             |       Punktzahl        |     Pfeile\n\n\n" +
+                         "Übungslevel:        "+"Keine Punkte"+"       "+"Keine Anzahl"+"\n" +
+                         "Level 1:                 "+"Keine Punkte"+"       "+"Keine Anzahl"+"\n" +
+                         "Level 2:                "+"Keine Punkte"+"       "+"Keine Anzahl";
         }
 
 

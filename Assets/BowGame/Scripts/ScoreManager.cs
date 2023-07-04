@@ -22,6 +22,10 @@ public class ScoreManager : MonoBehaviour
     private TMP_Text textScore;
     [SerializeField]
     private TMP_Text textArrows;
+    [SerializeField]
+    private TMP_Text menuTextScore;
+    [SerializeField]
+    private TMP_Text menuTextArrows;
     private string currentSceneName;
     private GameObject[] allTargets;
 
@@ -50,10 +54,12 @@ public class ScoreManager : MonoBehaviour
     private void UpdateArrows()
     {
         textArrows.text = (arrows).ToString();
+        menuTextArrows.text = (arrows).ToString();
     }
     private void UpdateScore()
     {
         textScore.text = score.ToString();
+        menuTextScore.text = score.ToString();
     }
 
     private string GetCurrentSceneName()
@@ -86,6 +92,7 @@ public class ScoreManager : MonoBehaviour
                 {
                     PlayerPrefs.SetInt("Score " + currentSceneName, score);
                 }
+                int temp = PlayerPrefs.GetInt("Arrows " + currentSceneName);
                 if (PlayerPrefs.GetInt("Arrows " + currentSceneName) > arrows)
                 {
                     PlayerPrefs.SetInt("Arrows " + currentSceneName, arrows);

@@ -479,8 +479,8 @@
                 },
                 {
                     "name": "",
-                    "id": "79380180-e984-4ab0-bab6-6af76cabb566",
-                    "path": "<OculusTouchController>{LeftHand}/menu",
+                    "id": "83e4b6ea-2b7c-4f09-b881-36f4024cd13a",
+                    "path": "<OculusTouchController>/menu",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -490,8 +490,8 @@
                 },
                 {
                     "name": "",
-                    "id": "f4f22e7e-33b6-4f0c-a482-667d98ef6b03",
-                    "path": "<QuestProTouchController>/menu",
+                    "id": "bf0dc0d2-6264-4152-a59e-18f51f9fe847",
+                    "path": "<XRController>{LeftHand}/start",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

@@ -28,7 +28,7 @@ public class ScoreManager : MonoBehaviour
         
         currentSceneName = GetCurrentSceneName();
         //Debug.Log("Aktuelle Szene: " + currentSceneName);
-        PlayerPrefs.SetInt("Arrows " + currentSceneName, 100);
+        //PlayerPrefs.SetInt("Arrows " + currentSceneName, 100);
 
     }
 

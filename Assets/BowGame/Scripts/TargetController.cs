@@ -107,7 +107,7 @@ public class TargetController : MonoBehaviour, IHittable
             stopped = true;
         }
     }
-    public bool FreschTargets(string key)
+    public bool FreschTarget(string key)
     {
         foreach (GameObject obj in taggedObjects)
         {

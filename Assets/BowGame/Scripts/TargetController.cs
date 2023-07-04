@@ -27,6 +27,9 @@ public class TargetController : MonoBehaviour, IHittable
     [SerializeField]
     private float arriveThreshold, movementRadius = 2, speed = 1;
 
+    [SerializeField]
+    private bool isTutorialTarget = false;
+
     private Component[] childrenRenderes;
 
     private void Awake()
@@ -37,17 +40,22 @@ public class TargetController : MonoBehaviour, IHittable
         nextposition = GetNewMovementPosition();
 
         // Movementspeed of the target
-        string difficulty = PlayerPrefs.GetString("difficulty");
-        Debug.Log(difficulty);
-        if(difficulty == "medium")
+        if(isTutorialTarget == false)
         {
-            speed = 1;
-        }
-        else if(difficulty == "hard")
-        {
-            speed = 2;
-        }
-        else
+            string difficulty = PlayerPrefs.GetString("difficulty");
+            if(difficulty == "medium")
+            {
+                speed = 1;
+            }
+            else if(difficulty == "hard")
+            {
+                speed = 2;
+            }
+            else
+            {
+                speed = 0;
+            }
+        } else
         {
             speed = 0;
         }
@@ -73,6 +81,11 @@ public class TargetController : MonoBehaviour, IHittable
         health--;
         if (health <= 0)
         {
+            if (audioSource)
+            {
+                audioSource.Play();
+            }
+
             childrenRenderes = gameObject.GetComponentsInChildren<Renderer>();
             int count = 0;
 

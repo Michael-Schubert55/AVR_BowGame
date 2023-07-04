@@ -14,21 +14,22 @@ using UnityEngine.SceneManagement;
 public class Score : MonoBehaviour
 {
     ScoreManager score;
+    TargetController controller;
     
 
     private void Awake()
     {
         score = GameObject.Find("GlobalScripts").GetComponent<ScoreManager>();
+        controller = GameObject.Find("TargetParent").GetComponent<TargetController>();
     }
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("KollisionTest");
         foreach (ContactPoint contact in collision.contacts)
         {
             GameObject otherGameObject = contact.otherCollider.gameObject;
-            //Debug.Log("Kollision mit: " + otherGameObject.tag);
-            if (GetPoints(otherGameObject.tag) != 0) { score.Score +=GetPoints(otherGameObject.tag); }
-            
-            
+            Debug.Log("Kollision mit: " + otherGameObject.tag);
+            if (GetPoints(otherGameObject.tag) != 0 && controller.FreschTarget(otherGameObject.name)) { score.Score +=GetPoints(otherGameObject.tag); }           
         }
     }
     private int GetPoints(string tag)
@@ -46,8 +47,7 @@ public class Score : MonoBehaviour
             case "TargetArea_10Points":
                 return 10;              
         }
-        return 0;
-        
+        return 0;   
     }
     
 

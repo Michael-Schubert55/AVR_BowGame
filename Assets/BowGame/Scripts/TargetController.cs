@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 // =============================================================
 // AUTHOR       : Schubert Michael
@@ -31,6 +32,9 @@ public class TargetController : MonoBehaviour, IHittable
     private bool isTutorialTarget = false;
 
     private Component[] childrenRenderes;
+    public int targets;
+    GameObject[] taggedObjects;
+    private Dictionary<string, bool> targetObjects;
 
     private void Awake()
     {
@@ -38,6 +42,14 @@ public class TargetController : MonoBehaviour, IHittable
         rb = GetComponent<Rigidbody>();
         originPosition = transform.position;
         nextposition = GetNewMovementPosition();
+        taggedObjects = GameObject.FindGameObjectsWithTag("TargetArea_10Points");
+        foreach (GameObject obj in taggedObjects)
+        {
+            targetObjects[obj.name] = false;
+        }
+        
+        targets  = taggedObjects.Length;
+        Debug.Log("In dieser Szene ist die Anzahl der Ziel: " + targets);
 
         // Movementspeed of the target
         if(isTutorialTarget == false)
@@ -73,6 +85,12 @@ public class TargetController : MonoBehaviour, IHittable
         {
             audioSource.Play();
         }
+            foreach (GameObject obj in taggedObjects)
+            {
+                targetObjects[obj.name] = true;
+            }
+        
+        
     }
 
     public void GetHit()
@@ -101,6 +119,17 @@ public class TargetController : MonoBehaviour, IHittable
             //rb.isKinematic = false;
             stopped = true;
         }
+    }
+    public bool FreschTarget(string key)
+    {
+        foreach (GameObject obj in taggedObjects)
+        {
+            if (obj.name == key)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
     private void FixedUpdate()

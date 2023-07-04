@@ -16,8 +16,8 @@ public class ScoreManager : MonoBehaviour
 {
     //[SerializeField]
     //private int maxArrows;
-    private int arrows;
-    private int score;
+    public int arrows;
+    public int score;
     [SerializeField]
     private TMP_Text textScore;
     [SerializeField]
@@ -33,54 +33,29 @@ public class ScoreManager : MonoBehaviour
         
         currentSceneName = GetCurrentSceneName();
         allTargets = GameObject.FindGameObjectsWithTag("Target");
-        //Debug.Log("Aktuelle Szene: " + currentSceneName);
-        //PlayerPrefs.SetInt("Arrows " + currentSceneName, 100);
 
     }
 
-    public int Score
-    {
-        get { return score; }
-        set { score = value; UpdateScore(); }
-    }
-    public int Arrows
-    {
-        get { return arrows; }
-        set { arrows = value; UpdateArrows(); }
-    }
+    //public int Score
+    //{
+    //    get { return score; }
+    //    set { score = value; UpdateScore(); }
+    //}
+    //public int Arrows
+    //{
+    //    get { return arrows; }
+    //    set { arrows = value; UpdateArrows(); }
+    //}
 
-    private void UpdateArrows()
-    {
-        textArrows.text = (arrows).ToString();
+    //private void UpdateArrows()
+    //{
+    //    textArrows.text = (arrows).ToString();
+    //}
+    //private void UpdateScore()
+    //{
+    //    textScore.text = score.ToString();
+    //}
 
-
-    }
-    private void UpdateScore()
-    {
-        
-        textScore.text = score.ToString();
-        if (PlayerPrefs.HasKey("Score " + currentSceneName) && PlayerPrefs.HasKey("Arrows " + currentSceneName))
-        {
-            if (PlayerPrefs.GetInt("Score " + currentSceneName) < score)
-            {
-                PlayerPrefs.SetInt("Score " + currentSceneName, score);
-            }
-            if(PlayerPrefs.GetInt("Arrows " + currentSceneName) > arrows)
-            {
-                PlayerPrefs.SetInt("Arrows " + currentSceneName, arrows);
-            }
-        }
-        else
-        {
-            PlayerPrefs.SetInt("Score " + currentSceneName, score);
-            PlayerPrefs.SetInt("Arrows " + currentSceneName, arrows);
-        }
-    }
-       /* private void SetHighScore(int score, int arrows)
-        {
-            PlayerPrefs.SetInt("Score " + currentSceneName, score);
-            PlayerPrefs.SetInt("Arrows " + currentSceneName, arrows);
-        }*/
     private string GetCurrentSceneName()
     {
         int sceneBuildIndex = SceneManager.GetActiveScene().buildIndex;
@@ -105,6 +80,23 @@ public class ScoreManager : MonoBehaviour
 
         if(openMenu == true && ingameMenuManager != null)
         {
+            if (PlayerPrefs.HasKey("Score " + currentSceneName) && PlayerPrefs.HasKey("Arrows " + currentSceneName))
+            {
+                if (PlayerPrefs.GetInt("Score " + currentSceneName) < score)
+                {
+                    PlayerPrefs.SetInt("Score " + currentSceneName, score);
+                }
+                if (PlayerPrefs.GetInt("Arrows " + currentSceneName) > arrows)
+                {
+                    PlayerPrefs.SetInt("Arrows " + currentSceneName, arrows);
+                }
+            }
+            else
+            {
+                PlayerPrefs.SetInt("Score " + currentSceneName, score);
+                PlayerPrefs.SetInt("Arrows " + currentSceneName, arrows);
+            }
+
             ingameMenuManager.ActivateExternal();
         }
     }

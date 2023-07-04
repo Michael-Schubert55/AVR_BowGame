@@ -87,7 +87,7 @@ public class TargetController : MonoBehaviour, IHittable
 
             if (otherGameObject.tag != "" && GetPoints(otherGameObject.tag) != 0 && isHit == false)
             {
-                scoreManager.Score +=GetPoints(otherGameObject.tag);
+                scoreManager.score +=GetPoints(otherGameObject.tag);
                 isHit = true;
             }
 

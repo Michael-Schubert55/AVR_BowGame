@@ -13,10 +13,11 @@ using UnityEngine.InputSystem;
 // =============================================================
 public class MenuManager : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -38,6 +39,7 @@ public class MenuManager : MonoBehaviour
     public void ChangeToLevel2()
     {
         SceneManager.LoadScene("Level_2");
+
     }
 
     public void ChangeToLevel3()
@@ -49,4 +51,5 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+
 }

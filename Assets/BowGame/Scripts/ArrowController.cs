@@ -21,10 +21,10 @@ public class ArrowController : MonoBehaviour
 
     [SerializeField]
     private AudioSource bowReleaseAudio;
-    //ScoreCounter scoreCounter;
+    ScoreManager arrowCount;
     private void Awake()
     {
-        //scoreCounter = GameObject.Find("Scripts").GetComponent<ScoreCounter>();
+        arrowCount = GameObject.Find("GlobalScripts").GetComponent<ScoreManager>();
     }
 
     public void PrepareArrow()
@@ -45,7 +45,6 @@ public class ArrowController : MonoBehaviour
         arrow.transform.rotation = arrowSpawnPoint.transform.rotation;
         Rigidbody rBody = arrow.GetComponent<Rigidbody>();
         rBody.AddForce(midPointVisual.transform.right * strength * arrowMaxSpeed, ForceMode.Impulse);
-        //Debug.Log(scoreCounter.Counter);
-        //scoreCounter.Counter += 1;
+        arrowCount.Arrows += 1;
     }
 }

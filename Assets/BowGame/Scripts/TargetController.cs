@@ -104,6 +104,7 @@ public class TargetController : MonoBehaviour, IHittable
             rb.MovePosition(transform.position + direction.normalized * Time.fixedDeltaTime * speed);
         }
     }
+
 }
 
 public interface IHittable

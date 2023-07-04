@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/BowGame/Scenes/Level_2.unity
     guid: 964e30260b45d23478491d43ad1a9841
+  - enabled: 1
+    path: Assets/BowGame/Scenes/Level_3.unity
+    guid: dd00f0ae143411d40acc836138eed951
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: f3defae645a74604f84c42d76b125905,
       type: 2}

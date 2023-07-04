@@ -32,9 +32,12 @@ public class TargetController : MonoBehaviour, IHittable
     private bool isTutorialTarget = false;
 
     private Component[] childrenRenderes;
+
+    //Attribute for score calculation
     public int targets;
     GameObject[] taggedObjects;
     private Dictionary<string, bool> targetObjects;
+    //
 
     private void Awake()
     {
@@ -42,6 +45,7 @@ public class TargetController : MonoBehaviour, IHittable
         rb = GetComponent<Rigidbody>();
         originPosition = transform.position;
         nextposition = GetNewMovementPosition();
+        // initalize the attributes for score Callculation
         targetObjects = new Dictionary<string, bool>();
         taggedObjects = GameObject.FindGameObjectsWithTag("TargetArea_10Points");
         foreach (GameObject obj in taggedObjects)
@@ -49,7 +53,7 @@ public class TargetController : MonoBehaviour, IHittable
             targetObjects[obj.transform.parent.transform.parent.name] = true;
             Debug.Log("Folgende Keys sind eingefüt worden Worden: " + obj.transform.parent.transform.parent.name);
         }
-        
+        //
         targets  = taggedObjects.Length;
         Debug.Log("In dieser Szene ist die Anzahl der Ziel: " + targets);
 
@@ -87,7 +91,7 @@ public class TargetController : MonoBehaviour, IHittable
         {
             audioSource.Play();
         }
-        
+        //set hitted targets to falls
         foreach (ContactPoint contact in collision.contacts)
         {
            
@@ -99,7 +103,7 @@ public class TargetController : MonoBehaviour, IHittable
             }
             
         }
-
+        //
 
     }
 
@@ -132,10 +136,11 @@ public class TargetController : MonoBehaviour, IHittable
             stopped = true;
         }
     }
+    //Return bool for given Target
     public bool FreshTarget(string key)
     {
         return targetObjects[key];
-    }
+    }//
 
     private void FixedUpdate()
     {

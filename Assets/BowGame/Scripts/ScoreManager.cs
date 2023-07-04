@@ -21,13 +21,15 @@ public class ScoreManager : MonoBehaviour
     private TMP_Text textScore;
     [SerializeField]
     private TMP_Text textArrows;
-    public string currentSceneName;
+    private string currentSceneName;
 
     private void Awake()
     {
         
         currentSceneName = GetCurrentSceneName();
         //Debug.Log("Aktuelle Szene: " + currentSceneName);
+        PlayerPrefs.SetInt("Arrows " + currentSceneName, 100);
+
     }
 
     public int Score
@@ -50,15 +52,16 @@ public class ScoreManager : MonoBehaviour
     }
     private void UpdateScore()
     {
+        
         textScore.text = score.ToString();
-        //Debug.Log("Update was called Score = " + score);
+        Debug.Log("Update was called Score = " + score);
         if (PlayerPrefs.HasKey("Score " + currentSceneName) && PlayerPrefs.HasKey("Arrows " + currentSceneName))
         {
             if (PlayerPrefs.GetInt("Score " + currentSceneName) < score)
             {
                 PlayerPrefs.SetInt("Score " + currentSceneName, score);
             }
-            if (PlayerPrefs.GetInt("Arrows " + currentSceneName) > arrows)
+            if(PlayerPrefs.GetInt("Arrows " + currentSceneName) > arrows)
             {
                 PlayerPrefs.SetInt("Arrows " + currentSceneName, arrows);
             }
@@ -69,11 +72,11 @@ public class ScoreManager : MonoBehaviour
             PlayerPrefs.SetInt("Arrows " + currentSceneName, arrows);
         }
     }
-        private void SetHighScore(int score, int arrows)
+       /* private void SetHighScore(int score, int arrows)
         {
             PlayerPrefs.SetInt("Score " + currentSceneName, score);
             PlayerPrefs.SetInt("Arrows " + currentSceneName, arrows);
-        }
+        }*/
     private string GetCurrentSceneName()
     {
         int sceneBuildIndex = SceneManager.GetActiveScene().buildIndex;

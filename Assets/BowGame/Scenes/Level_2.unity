@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.005
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0019745273, g: 0.0008943708, b: 0.00087209034, a: 0.005}
+  m_IndirectSpecularColor: {r: 0.001974701, g: 0.00089261006, b: 0.00087350444, a: 0.005}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6494,7 +6494,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Target (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3783203776035350855, guid: fc4008cc69860574aa90bd3258fac7b2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fc4008cc69860574aa90bd3258fac7b2, type: 3}
 --- !u!1 &1263081517 stripped
 GameObject:
@@ -7817,6 +7818,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -149686484671019929, guid: f8ba5c8e2a3fd9240b660f0e78396349,
         type: 2}
+    - target: {fileID: 2031159235922741000, guid: 8f0079ff50d6c2543845a3d5aad78e8d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 53
+      objectReference: {fileID: 0}
     - target: {fileID: 2031159236017430754, guid: 8f0079ff50d6c2543845a3d5aad78e8d,
         type: 3}
       propertyPath: m_RootOrder
@@ -7894,6 +7900,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -149686484671019929, guid: f8ba5c8e2a3fd9240b660f0e78396349,
         type: 2}
+    - target: {fileID: 2031159236671702293, guid: 8f0079ff50d6c2543845a3d5aad78e8d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 52
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f0079ff50d6c2543845a3d5aad78e8d, type: 3}
 --- !u!114 &1474105788 stripped
